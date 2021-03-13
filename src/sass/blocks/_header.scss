@@ -1,0 +1,47 @@
+.header {
+    &__promo {
+        background: linear-gradient(0deg, #e3eff9 8.84%, rgba(152, 195, 232, 0) 31.12%);
+        height: 768px;
+    }
+    &__navigation {
+        margin: 43px 83px 0 43px;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__menu {
+        margin: auto 0;
+    }
+    &__wrapper {
+        margin: 12px 24px 0 0;
+    }
+    &__description {
+        position: absolute;
+        margin-left: 212px;
+    }
+    &__title {
+        margin-top: 90px;
+        color: rgba(31, 63, 104, 1);
+        font-size: 64px;
+        text-align: left;
+        line-height: 74px;
+    }
+    &__subtitle{
+        margin-top: 32px;
+        text-align: left;
+        &-text {
+            color: rgba(31, 63, 104, 1);
+            opacity: 60%;
+        }
+    }
+    
+    &__button button{
+        margin-top: 71px;
+        &:hover {
+            box-shadow: none;
+            color:#e4f3ff;
+        }
+    }
+    &__illustration {
+        margin-left: 654px;
+    }
+}

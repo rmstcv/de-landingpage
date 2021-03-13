@@ -1,0 +1,87 @@
+.offer {
+    &__wrapper {
+        position: relative;
+        min-height: 1300px;
+        margin: 180px 213px 0 213px;
+    }
+    &__info {
+        color: #316099;
+    }
+    &__item {
+        position: absolute;
+        width: 380px;
+        padding: 48px;
+        background: #FFFFFF;
+        box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
+        border-radius: 10px;
+        &_right-top {
+            left: 520px;
+            top: 0;
+        }
+        &_right-bottom {
+            left: 520px;
+            top: 590px;
+        }
+        &_left-center {
+            left: 50px;
+            top: 300px;
+        }
+    }
+    &__image {
+        display: block;
+        margin: 0 auto;
+        &_top {
+            position: relative;
+            top: -77px;
+        }
+        &_left {
+            margin-left: 26px;
+        }
+    }
+    &__title {
+        font-size: 20px;
+        line-height: 30px;
+        color: #1F3F68;
+        margin-top: 56px;
+        &_top {
+            position: relative;
+            top: -77px;
+        }
+    }
+    &__text {
+        color: #1F3F68;
+        opacity: 0.6;
+        &_top {
+            position: relative;
+            top: -77px;
+        }
+    }
+    &__more {
+        margin-top: 32px;
+        position: relative;
+    }
+    &__href {
+        font-size: 14px;
+        line-height: 30px;
+        color: #5A98D0;
+        a {
+            text-decoration: none;
+            color: #5A98D0;
+            &:hover {
+                color: rgba(49, 96, 153, 1);
+            }
+        }
+        &_top {
+            margin-top: -77px;
+        }
+    }
+    &__arrow {
+        position: absolute;
+        left: 86px;
+        top: 3px;
+        svg path:hover{
+            fill:rgba(49, 96, 153, 1);
+            
+        }
+    }
+}
