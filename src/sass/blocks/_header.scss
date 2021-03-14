@@ -1,7 +1,7 @@
 .header {
     &__promo {
-        background: linear-gradient(0deg, #e3eff9 8.84%, rgba(152, 195, 232, 0) 31.12%);
-        height: 768px;
+        background: linear-gradient(0deg, rgba(152, 195, 232, 0.2) 8.84%, rgba(152, 195, 232, 0) 31.12%);
+        padding-bottom: 56px;
     }
     &__navigation {
         margin: 43px 83px 0 43px;
@@ -13,9 +13,9 @@
     }
     &__wrapper {
         margin: 12px 24px 0 0;
+        display: flex;
     }
     &__description {
-        position: absolute;
         margin-left: 212px;
     }
     &__title {
@@ -24,24 +24,24 @@
         font-size: 64px;
         text-align: left;
         line-height: 74px;
+        position: absolute;
     }
     &__subtitle{
-        margin-top: 32px;
+        margin-top: 264px;
         text-align: left;
         &-text {
             color: rgba(31, 63, 104, 1);
             opacity: 60%;
         }
     }
-    
     &__button button{
         margin-top: 71px;
         &:hover {
             box-shadow: none;
-            color:#e4f3ff;
+            opacity: 70%;
         }
     }
-    &__illustration {
-        margin-left: 654px;
+    &__illustration img{
+        max-width: 664px;
     }
 }

@@ -1,0 +1,48 @@
+.partners {
+    &__wrapper {
+        background: $blue;
+        border-radius: 200px 0px 0px 0px;
+        padding-bottom: 20px;
+        margin-bottom: -1px;
+    }
+    &__client {
+        height: 680px;
+        padding-top: 96px;
+        padding-left: 213px;
+        &-text {
+            display: flex;
+        }
+        &-header {
+            max-width: 223px;
+        }
+        &-descr {
+            max-width: 540px;
+            opacity: 0.6;
+            margin-left: 97px;
+        }
+        &-item {
+            max-width: 958px;
+            max-height: 278px;
+            display: grid;
+            grid-template: 1fr 1fr / 1fr 1fr 1fr 1fr;
+            column-gap: 2px;
+            row-gap: 2px;
+            background-color: rgba(255, 255, 255, .3);
+            margin-top: 111px;
+        }
+        &-logo {
+            font-size: 20px;
+            line-height: 139px;
+            color: #FFFFFF;
+            text-align: center;
+            background-color: $blue;
+            &:last-child{
+                background-color: #437bc0;
+                &:hover {
+                    background-color:#5185c4;
+                    cursor: pointer;
+                }
+            }
+        }
+    }    
+}

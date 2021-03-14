@@ -1,62 +1,19 @@
 .footer {
     &__wrapper {
-        height: 1549px;
-        background: #5A98D0;
-        border-radius: 200px 0px 0px 0px;
-    }
-    &__client {
-        height: 680px;
-        padding-top: 96px;
-        padding-left: 213px;
-        &-text {
-            display: flex;
-        }
-        &-header {
-            width: 223px;
-            height: 92px;
-        }
-        &-descr {
-            width: 540px;
-            height: 80px;
-            opacity: 0.6;
-            margin-left: 97px;
-        }
-        &-item {
-            width: 958px;
-            height: 278px;
-            display: grid;
-            grid-template: 1fr 1fr / 1fr 1fr 1fr 1fr;
-            column-gap: 2px;
-            row-gap: 2px;
-            background-color: rgba(255, 255, 255, .3);
-            margin-top: 111px;
-        }
-        &-logo {
-            font-size: 20px;
-            line-height: 139px;
-            color: #FFFFFF;
-            text-align: center;
-            background-color: #5A98D0;
-            &:last-child{
-                background-color: #437bc0;
-                &:hover {
-                    background-color:#5185c4;
-                    cursor: pointer;
-                }
-            }
-        }
-    }  
-    &__info {
-        height: 869px;
-        width: 1270px;
-        padding: 91px 0 0 213px;
-        background: #316099;
+        max-width: 1270px;
+        padding: 91px 0 64px 213px;
+        background: $darkblue;
         border-radius: 0px 200px 0px 0px;
-        position: absolute;
+        margin-right: 96px;
+    }
+    &__background {
+        max-width: 1366px;
+        background: $blue;
+    }
+    &__info {
         display: flex;
         &-text {
-            width: 460px;
-            height: 204px;
+            max-width: 460px;
         }
         &-descr {
             opacity: 0.6;
@@ -82,8 +39,6 @@
         top: 396px;
     }
     &__company {
-        position: absolute;
-        top: 397px;
         &-wrapper {
             margin-top: 96px;
             display: flex;
@@ -175,5 +130,12 @@
                 }
             }
         }   
+    }
+    &__rights {
+        margin-top: 64px;
+        margin-bottom: 0;
+        color: #FFFFFF;
+        opacity: 0.4;
+        font-weight: 100;
     }
 }

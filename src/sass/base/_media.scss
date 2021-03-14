@@ -1,15 +1,303 @@
+@media (max-width: 1366px) {
+    .header {
+        &__title {
+        font-size: 54px;
+        }
+        &__subtitle {
+            margin-right: 15px;
+        }
+    }
+    .partners {
+        &__client {
+            &-item {
+                max-width: 890px;
+            }
+        }
+    }
+}
+
 @media (max-width: 1200px) {
-    
+    .header {
+        &__title {
+        font-size: 48px;
+        margin-top: 45px;
+        }
+        &__description {
+            margin-left: 90px;
+        }
+        &__illustration img{
+            max-width: 500px;
+            margin-top: 65px;
+        }
+    }
+    .offer {
+        &__info {
+            font-size: 30px;
+            margin-left: 35px;
+        }
+    }
+    .partners {
+        &__client {
+            padding-left: 68px;
+            padding-right: 40px;
+        }
+    }
+    .footer {
+        &__wrapper {
+            padding-left: 80px;
+        }
+        &__info-btn {
+            margin-left: 20px;
+            margin-right: 50px;
+        }
+        &__company {
+            &-about {
+                margin-left: 60px;
+            }
+            &-social {
+                margin-left: 60px;
+            }
+        }
+        &__line {
+            width: 780px;
+        }
+    }
 }
 
 @media (max-width: 991px) {
-              
+    .header {
+        &__title {
+        font-size: 42px;
+        }
+        &__subtitle {
+            margin-top: 223px;
+        }
+        &__illustration img{
+            max-width: 400px;
+        }
+        &__button button {
+            margin-top: 30px;
+        }
+    }
+    .offer {
+        &__wrapper {
+            max-width: 940px;
+            margin-top: 100px;
+            row-gap: 30px;
+            column-gap: 30px;
+            padding-bottom: 100px;
+        }
+    }
+    .partners {
+        &__client {
+            &-item {
+                margin-top: 45px;
+            }
+            &-logo {
+                font-size: 15px;
+                line-height: 115px;
+            }
+        }
+    }
+    .footer {
+        &__wrapper {
+            padding-bottom: 40px;
+            padding-left: 30px;
+        }
+        &__company {
+            &-about {
+                margin-left: 30px;
+            }
+            &-social {
+                margin-left: 30px;
+            }
+        }
+        &__btn {
+            margin-top: 58px;
+        }
+        &__line {
+            width: 612px;
+        }
+    }
 }
 
 @media (max-width: 767px) {
-                
+    .header {
+        &__title {
+        font-size: 38px;
+        line-height: 60px;
+        }
+        &__subtitle {
+            margin-top: 190px;
+        }
+        &__illustration img{
+            display: none;
+        }
+        &__button button.btn {
+            width: 200px;
+            height: 49px;
+        }
+    }
+    .offer {
+        &__wrapper {
+            margin-top: 50px;
+        }
+        &__item {
+            padding: 25px;
+        }
+        &__image {
+            max-width: 150px;
+            &_top {
+                top: -41px;
+            }
+        }
+        &__info {
+            font-size: 20px;
+            line-height: 30px;
+        }
+        &__title {
+            font-size: 13px;
+            line-height: 23px;
+            margin-top: 10px;
+            &_top {
+                top: -41px;
+            }
+        }
+        &__text {
+           font-size: 12px;
+           line-height: 23px;
+           &_top {
+            top: -41px;
+            }
+        }
+        &__more_top {
+            top: 41px;
+        }
+    }
+    .partners {
+        &__client {
+            max-height: 580px;
+            &-logo {
+                font-size: 10px;
+                line-height: 70px;
+            }
+            &-header h2 {
+                font-size: 30px;
+            }
+            &-descr p {
+                font-size: 16px;
+            }
+        }
+    }
+    .footer {
+        &__wrapper {
+            padding-top: 46px;
+            border-radius: 12px 36px 0px 0px;
+            margin-right: 0;
+            //height: 840px;
+
+        }
+        &__info {
+            display: block;
+            &-btn {
+                margin-left: 0;
+                btn {
+                    width: 166px;
+                }
+            }
+        }
+        &__btn {
+            margin-top: 0;
+        }
+        &__line {
+            width: 415px;
+        }
+        &__company {
+            &-wrapper {
+                margin-top: 60px;
+                flex-wrap: wrap;
+            }
+        }
+    }
 }
 
 @media (max-width: 543px) {
-   
+    .header {
+        &__navigation {
+            margin: 22px 35px 0 25px;
+        }
+        &__title {
+        font-size: 28px;
+        line-height: 50px;
+        margin-top: 30px;
+        }
+        &__subtitle {
+            margin-top: 160px;
+        }
+        &__description {
+            margin-left: 30px;
+        }
+    }
+    .offer {
+        &__wrapper {
+            grid-template: 100px 1fr 1fr 1fr/ 1fr;
+            padding-bottom: 40px;
+        }
+        &__item {
+            &_right-top {
+                grid-column: 1 / 1;
+                grid-row: 2 / 3;
+                justify-self: center;
+            }
+            &_right-bottom {
+                grid-column: 1 / 1;
+                grid-row: 3 / 4;
+                justify-self: center;
+            }
+            &_left-center {
+                grid-column: 1 / 1;
+                grid-row: 4 / 5;
+                justify-self: center;
+            }
+        }
+    }
+    .partners {
+        &__wrapper {
+            border-radius: 100px 0px 0px 0px;
+        }
+        &__client {
+            padding-top: 40px;
+            &-item {
+                margin-top: 0;
+                grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr;
+                row-gap: 0;
+                column-gap: 0;
+            }
+            &-logo {
+                font-size: 10px;
+                line-height: 70px;
+            }
+            &-text {
+                flex-direction: column;
+            }
+            &-header {
+                h2 {
+                    font-size: 20px;
+                }
+            }
+            &-descr {
+                margin-left: 0;
+                p {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    .footer {
+        &__company {
+            &-wrapper {
+                margin-top: 60px;
+            }
+        }
+    }
 }   
