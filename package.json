@@ -6,16 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/streltra/pulseProject.git"
-  },
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/streltra/pulseProject/issues"
-  },
-  "homepage": "https://github.com/streltra/pulseProject#readme",
+  "homepage": "",
   "devDependencies": {
     "browser-sync": "^2.26.13",
     "gulp": "^4.0.2",

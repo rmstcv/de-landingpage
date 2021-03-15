@@ -119,6 +119,42 @@
             width: 612px;
         }
     }
+
+    .project {
+        &__wrapper {
+            padding: 0 20px;
+        }
+        &__header {
+            padding: 20px;
+            padding-top: 0;
+        }
+        &__title {
+            font-size: 22px;
+            line-height: 36px;
+        }
+        &__descr {
+            font-size: 13px;
+            margin-left: 20px;
+        }
+        &__projects {
+            row-gap: 0;
+            column-gap: 30px;
+            margin: 0;
+        }
+        &__smart img{
+            max-width: 100%;
+        }
+        &__spark img{
+            max-width: 100%;
+        }
+        &__car img{
+            max-width: 100%;
+        }
+        &__logo {
+            margin-top: 20px;
+            margin-bottom: 100px;
+        }
+    }
 }
 
 @media (max-width: 767px) {
@@ -194,8 +230,6 @@
             padding-top: 46px;
             border-radius: 12px 36px 0px 0px;
             margin-right: 0;
-            //height: 840px;
-
         }
         &__info {
             display: block;
@@ -217,6 +251,22 @@
                 margin-top: 60px;
                 flex-wrap: wrap;
             }
+        }
+        &__rights {
+            font-size: 12px;
+        }
+    }
+    .project {
+        &__smart-text {
+            top: 0;
+        }
+        &__spark-text h2 {
+            font-size: 19px;
+            line-height: 30px;
+        }
+        &__car-text h2 {
+            font-size: 19px;
+            line-height: 30px;
         }
     }
 }
@@ -298,6 +348,50 @@
             &-wrapper {
                 margin-top: 60px;
             }
+        }
+        &__line {
+            display: none;
+        }
+    }
+    .project {
+        &__projects {
+            column-gap: 10px;
+        }
+        &__descr {
+            font-size: 12px;
+            line-height: 18px;
+        }
+        &__smart-text {
+            h2 {
+                font-size: 14px;
+            }
+            h3 {
+                font-size: 10px;
+                line-height: 0;
+            }
+        }
+        &__spark-text {
+            h2 {
+                font-size: 12px;
+                line-height: 24px;
+            }
+            h3 {
+                font-size: 10px;
+                line-height: 13px;
+            }
+        }
+        &__car-text {
+            h2 {
+                font-size: 12px;
+                line-height: 24px;
+            }
+            h3 {
+                font-size: 10px;
+                line-height: 13px;
+            }
+        }
+        &__logo {
+            margin-bottom: 50px;
         }
     }
 }   

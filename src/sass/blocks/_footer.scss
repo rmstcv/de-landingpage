@@ -46,17 +46,16 @@
         &-logo {
             display: flex;
             align-content: center;
-        }
-        &-logo img {
-            height: 48px;
-            margin: auto 0;
-        }
-        &-logo h2 {
-            font-size: 28px;
-            line-height: 46px;
-            color: #FFFFFF;
-            margin-left: 16px;
-            letter-spacing: 0.02em;
+            img {
+                margin: auto 0;
+            }
+            h2 {
+                font-size: 28px;
+                line-height: 46px;
+                color: #FFFFFF;
+                margin-left: 16px;
+                letter-spacing: 0.02em;
+            }
         }
         &-contact ol {
             padding: 0;
