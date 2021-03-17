@@ -175,39 +175,38 @@
         }
     }
     .offer {
-        &__wrapper {
-            margin-top: 50px;
-        }
-        &__item {
-            padding: 25px;
-        }
-        &__image {
-            max-width: 150px;
-            &_top {
-                top: -41px;
-            }
-        }
         &__info {
             font-size: 20px;
             line-height: 30px;
         }
         &__title {
-            font-size: 13px;
+            font-size: 15px;
             line-height: 23px;
-            margin-top: 10px;
-            &_top {
-                top: -41px;
-            }
         }
         &__text {
            font-size: 12px;
            line-height: 23px;
-           &_top {
-            top: -41px;
-            }
         }
-        &__more_top {
-            top: 41px;
+        &__wrapper {
+            grid-template: 100px 1fr 1fr 1fr/ 1fr;
+            padding-bottom: 40px;
+        }
+        &__item {
+            &_right-top {
+                grid-column: 1 / 1;
+                grid-row: 2 / 3;
+                justify-self: center;
+            }
+            &_right-bottom {
+                grid-column: 1 / 1;
+                grid-row: 3 / 4;
+                justify-self: center;
+            }
+            &_left-center {
+                grid-column: 1 / 1;
+                grid-row: 4 / 5;
+                justify-self: center;
+            }
         }
     }
     .partners {
@@ -257,6 +256,13 @@
         }
     }
     .project {
+        &__header {
+            margin-top: 50px;
+        }
+        &__title {
+            font-size: 20px;
+            line-height: 32px;
+        }
         &__smart-text {
             top: 0;
         }
@@ -267,6 +273,49 @@
         &__car-text h2 {
             font-size: 19px;
             line-height: 30px;
+        }
+    }
+    .footer {
+        &__company {
+            &-logo {
+                li {
+                    font-size: 12px;
+                    line-height: 0;
+                }
+                h2 {
+                    font-size: 18px;
+                    line-height: 11px;
+                }
+            }
+            &-contact ol {
+                li {
+                    font-size: 12px;
+                    line-height: 24px;
+                }
+            }
+            &-about {
+                margin-left: 15px;
+                li {
+                    font-size: 12px;
+                }
+                h2 {
+                    font-size: 15px;
+                    line-height: 20px;
+                }
+            }  
+            &-social {
+                margin-left: 20px;
+                li {
+                    font-size: 12px;
+                }
+                h2 {
+                    font-size: 15px;
+                    line-height: 20px;
+                }
+            }   
+        }
+        &__line {
+            display: none;
         }
     }
 }
@@ -287,11 +336,18 @@
         &__description {
             margin-left: 30px;
         }
+        &__button {
+            button.btn {
+                width: 170px;
+                height: 46px;
+            }
+        }
     }
     .offer {
         &__wrapper {
             grid-template: 100px 1fr 1fr 1fr/ 1fr;
             padding-bottom: 40px;
+            margin-top: 50px;
         }
         &__item {
             &_right-top {
@@ -308,6 +364,14 @@
                 grid-column: 1 / 1;
                 grid-row: 4 / 5;
                 justify-self: center;
+            }
+        }
+        &__img-wrapper {
+            height: 100px;
+        }
+        &__image {
+            &_top {
+                height: 164px;
             }
         }
     }
@@ -344,13 +408,28 @@
         }
     }
     .footer {
+        &__info {
+            &-text {
+                h2 {
+                    font-size: 30px;
+                    line-height: 36px;
+                }
+                p {
+                    font-size: 13px;
+                }
+            }
+        }
+        &__btn {
+            width: 170px;
+            height: 46px;
+        }
         &__company {
             &-wrapper {
                 margin-top: 60px;
             }
-        }
-        &__line {
-            display: none;
+            &-contact {
+                margin-bottom: 20px;
+            }
         }
     }
     .project {
