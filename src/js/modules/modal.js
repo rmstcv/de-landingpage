@@ -1,17 +1,41 @@
-function modal (modalSelector, triggerSelector, closeSelector) {
+export default class Modal {
 
-    let selector = document.querySelector(modalSelector),
-        trigger = document.querySelector(triggerSelector),
-        close = document.querySelector(closeSelector);
+    constructor (modal, trigger, close) {
 
-    trigger.addEventListener('click', () => {
-        selector.style.display = "block";
-    });
+        this.modal = document.querySelector(modal);
+        this.trigger = document.querySelectorAll(trigger);
+        this.close = document.querySelector(close);
+    }
 
-    close.addEventListener('click', () => {
-        selector.style.display = "none";
-    });
+    openModal () {
+        this.trigger.forEach(item => {
+            item.addEventListener('click', (e) => {
+                if (e.target) {
+                    e.preventDefault();
+                }
+        
+                this.modal.style.display = "block";
+                document.body.style.overflow = "hidden";
+            });
+        });
+    }
+
+    closeModal () {
+        this.close.addEventListener('click', () => {
+            this.modal.style.display = "none";
+            document.body.style.overflow = "";
+        });
+
+        this.modal.addEventListener('click', (e) => {
+            if (e.target === this.modal) {
+                this.modal.style.display = "none";
+                document.body.style.overflow = "";
+            }
+        });  
+    }
     
+    initModal() {
+        this.openModal();
+        this.closeModal();
+    }
 }
-
-export default modal;

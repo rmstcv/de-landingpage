@@ -19,12 +19,26 @@
     border-radius: 10px;
     &__close {
         position: absolute;
-        top: 20px;
+        top: 30px;
         right: 20px;
-        font-size: 20px;
+        font-size: 30px;
         color: $darkblue;
         &:hover {
             cursor: pointer;
         }
     }
+    &_mini{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background:rgba(255, 255, 255, 0.7);
+        box-shadow: 5px 10px 50px rgba(16, 112, 177, 0.2);
+        border-radius: 10px;
+        font-size: 20px;
+        position: fixed;
+        align-content: center;
+        padding: 18px;
+    }
 }
+
+
