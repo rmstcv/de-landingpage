@@ -6,16 +6,98 @@ const autoprefixer = require('gulp-autoprefixer');
 const rename = require("gulp-rename");
 const imagemin = require('gulp-imagemin');
 const htmlmin = require('gulp-htmlmin');
+const webpack = require("webpack-stream");
+
+const dist = "./dist/";
 
 gulp.task('server', function() {
 
-    browserSync({
+    browserSync.init({
         server: {
-            baseDir: "dist"
+            baseDir: "src",
+            port: 4000,
+		    notify: true
         }
     });
 
+});
+
+gulp.task('server-dist', function() {
+
+    browserSync.init({
+        server: {
+            baseDir: "dist",
+            port: 6000,
+		    notify: true
+        }
+    });
+
+});
+
+gulp.task('watch', function() {
+    gulp.watch("src/sass/**/*.+(scss|sass|css)", gulp.parallel('styles'));
     gulp.watch("src/*.html").on('change', browserSync.reload);
+    gulp.watch("src/js/**/*.js").on('change', gulp.parallel('build-js'));
+});
+
+gulp.task("build-js", () => {
+    return gulp.src("./src/js/main.js")
+                .pipe(webpack({
+                    mode: 'development',
+                    output: {
+                        filename: 'script.js'
+                    },
+                    watch: false,
+                    devtool: "source-map",
+                    module: {
+                        rules: [
+                          {
+                            test: /\.m?js$/,
+                            exclude: /(node_modules|bower_components)/,
+                            use: {
+                              loader: 'babel-loader',
+                              options: {
+                                presets: [['@babel/preset-env', {
+                                    debug: true,
+                                    corejs: 3,
+                                    useBuiltIns: "usage"
+                                }]]
+                              }
+                            }
+                          }
+                        ]
+                      }
+                }))
+                .pipe(gulp.dest("src"))
+                .on("end", browserSync.reload);
+});
+
+gulp.task("build-prod-js", () => {
+    return gulp.src("./src/js/main.js")
+                .pipe(webpack({
+                    mode: 'production',
+                    output: {
+                        filename: 'script.js'
+                    },
+                    module: {
+                        rules: [
+                          {
+                            test: /\.m?js$/,
+                            exclude: /(node_modules|bower_components)/,
+                            use: {
+                              loader: 'babel-loader',
+                              options: {
+                                presets: [['@babel/preset-env', {
+                                    corejs: 3,
+                                    useBuiltIns: "usage"
+                                }]]
+                              }
+                            }
+                          }
+                        ]
+                      }
+                }))
+                .pipe(gulp.dest(dist));
 });
 
 gulp.task('styles', function() {
@@ -25,14 +107,12 @@ gulp.task('styles', function() {
         .pipe(autoprefixer())
         .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(gulp.dest("src/css"))
-        .pipe(gulp.dest("dist/css"))
         .pipe(browserSync.stream());
 });
 
-gulp.task('watch', function() {
-    gulp.watch("src/sass/**/*.+(scss|sass|css)", gulp.parallel('styles'));
-    gulp.watch("src/*.html").on('change', gulp.parallel('html'));
-    gulp.watch("src/js/**/*.js").on('change', gulp.parallel('scripts'));
+gulp.task('styles-dist', function() {
+    return gulp.src("src/css/style.min.css")
+        .pipe(gulp.dest("dist/css"));
 });
 
 gulp.task('html', function () {
@@ -63,4 +143,6 @@ gulp.task('images', function () {
         .pipe(gulp.dest("dist/img"));
 });
 
-gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'scripts', 'fonts', 'icons', 'images', 'html'));
+gulp.task('default', gulp.parallel('watch', 'server', 'styles', "build-js"));
+
+gulp.task('dist', gulp.parallel('server-dist','styles-dist', 'fonts', 'icons', 'images', 'html', 'build-prod-js'));

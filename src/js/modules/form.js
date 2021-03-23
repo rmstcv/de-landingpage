@@ -58,7 +58,7 @@ export default class Form {
         statusMessage.classList.add("modal_mini");
         document.body.appendChild(statusMessage);
         statusMessage.textContent = status;
-        setTimeout(() => {statusMessage.style.display = "none"}, 5000);
+        setTimeout(() => {statusMessage.style.display = "none"}, 3000);
     }
 
     async postData (url, data) {
@@ -67,7 +67,7 @@ export default class Form {
             body: data
         });
 
-        return await result.text();
+        return await result;
     };
 
     sendForm () {
@@ -80,10 +80,13 @@ export default class Form {
                     const formData = new FormData(this.form);
                     this.postData(this.path, formData)
                         .then(result => {
-                            this.popMessage (this.status.success);
+                            if (result.ok === false) {
+                                this.popMessage (this.status.fail);
+                            } else {
+                                this.popMessage (this.status.success);}
+                            
                         })
-                        .catch((err) => {
-                            console.log(err);
+                        .catch(() => {
                             this.popMessage (this.status.fail);
                         })
                         .finally(() => {
