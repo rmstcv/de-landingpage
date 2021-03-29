@@ -36,11 +36,11 @@
         background-color: #fff;
         position: absolute;
         left: 0;
-        top: 396px;
+        top: 465px;
     }
     &__company {
         &-wrapper {
-            margin-top: 96px;
+            margin-top: 193px;
             display: flex;
         }
         &-logo {
@@ -78,6 +78,9 @@
                 a {
                     text-decoration: none;
                     color: #FFFFFF;
+                    &:hover {
+                        color:#c4e3ff;
+                    }
                 }
             }
         }

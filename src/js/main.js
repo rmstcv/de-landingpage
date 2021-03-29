@@ -5,6 +5,6 @@ window.addEventListener('DOMContentLoaded', () => {
 'use strcit';
 
 new Modal(".overlay", ".footer__btn", ".modal__close").initModal();
-new Form('form', 'input', 'input[name="user-name"]', 'input[name="email"]', ".overlay").sendForm();
+new Form('form', 'input', 'input[name="user-name"]', 'input[name="email"]', ".overlay").initForm();
 
 });

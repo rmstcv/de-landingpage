@@ -4035,7 +4035,7 @@ window.addEventListener('DOMContentLoaded', function () {
   'use strcit';
 
   new _modules_modal_js__WEBPACK_IMPORTED_MODULE_0__["default"](".overlay", ".footer__btn", ".modal__close").initModal();
-  new _modules_form_js__WEBPACK_IMPORTED_MODULE_1__["default"]('form', 'input', 'input[name="user-name"]', 'input[name="email"]', ".overlay").sendForm();
+  new _modules_form_js__WEBPACK_IMPORTED_MODULE_1__["default"]('form', 'input', 'input[name="user-name"]', 'input[name="email"]', ".overlay").initForm();
 });
 
 /***/ }),
@@ -4192,33 +4192,63 @@ var Form = /*#__PURE__*/function () {
     }()
   }, {
     key: "sendForm",
-    value: function sendForm() {
+    value: // sendForm () {
+    //     this.form.addEventListener('submit', (e) => {
+    //         e.preventDefault();
+    //         this.checkName();
+    //         this.checkEmail();
+    //             if (this.checkName() && this.checkEmail()) {
+    //                 const formData = new FormData(this.form);
+    //                 this.postData(this.path, formData)
+    //                     .then(result => {
+    //                         if (result.ok === false) {
+    //                             this.popMessage (this.status.fail);
+    //                         } else {
+    //                             this.popMessage (this.status.success);}
+    //                     })
+    //                     .catch(() => {
+    //                         this.popMessage (this.status.fail);
+    //                     })
+    //                     .finally(() => {
+    //                         this.clearInputs ();
+    //                         this.closeModal();
+    //                     });
+    //             }
+    //     });
+    // };
+    function sendForm() {
       var _this = this;
+
+      if (this.checkName() && this.checkEmail()) {
+        var formData = new FormData(this.form);
+        this.postData(this.path, formData).then(function (result) {
+          if (result.ok === false) {
+            _this.popMessage(_this.status.fail);
+          } else {
+            _this.popMessage(_this.status.success);
+          }
+        }).catch(function () {
+          _this.popMessage(_this.status.fail);
+        }).finally(function () {
+          _this.clearInputs();
+
+          _this.closeModal();
+        });
+      }
+    }
+  }, {
+    key: "initForm",
+    value: function initForm() {
+      var _this2 = this;
 
       this.form.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        _this.checkName();
+        _this2.checkName();
 
-        _this.checkEmail();
+        _this2.checkEmail();
 
-        if (_this.checkName() && _this.checkEmail()) {
-          var formData = new FormData(_this.form);
-
-          _this.postData(_this.path, formData).then(function (result) {
-            if (result.ok === false) {
-              _this.popMessage(_this.status.fail);
-            } else {
-              _this.popMessage(_this.status.success);
-            }
-          }).catch(function () {
-            _this.popMessage(_this.status.fail);
-          }).finally(function () {
-            _this.clearInputs();
-
-            _this.closeModal();
-          });
-        }
+        _this2.sendForm();
       });
     }
   }]);
@@ -4260,20 +4290,27 @@ var Modal = /*#__PURE__*/function () {
   }
 
   _createClass(Modal, [{
+    key: "showModal",
+    value: function showModal() {
+      this.modal.style.display = "block";
+      document.body.style.overflow = "hidden";
+    }
+  }, {
     key: "openModal",
     value: function openModal() {
       var _this = this;
 
       this.trigger.forEach(function (item) {
-        item.addEventListener('click', function (e) {
-          if (e.target) {
-            e.preventDefault();
-          }
-
-          _this.modal.style.display = "block";
-          document.body.style.overflow = "hidden";
+        item.addEventListener('click', function () {
+          _this.showModal();
         });
       });
+    }
+  }, {
+    key: "hideModal",
+    value: function hideModal() {
+      this.modal.style.display = "none";
+      document.body.style.overflow = "";
     }
   }, {
     key: "closeModal",
@@ -4281,13 +4318,11 @@ var Modal = /*#__PURE__*/function () {
       var _this2 = this;
 
       this.close.addEventListener('click', function () {
-        _this2.modal.style.display = "none";
-        document.body.style.overflow = "";
+        _this2.hideModal();
       });
       this.modal.addEventListener('click', function (e) {
         if (e.target === _this2.modal) {
-          _this2.modal.style.display = "none";
-          document.body.style.overflow = "";
+          _this2.hideModal();
         }
       });
     }

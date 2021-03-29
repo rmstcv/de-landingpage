@@ -6,30 +6,29 @@ export default class Modal {
         this.trigger = document.querySelectorAll(trigger);
         this.close = document.querySelector(close);
     }
+    
+    showModal () {
+        this.modal.style.display = "block";
+        document.body.style.overflow = "hidden";
+    }
 
     openModal () {
         this.trigger.forEach(item => {
-            item.addEventListener('click', (e) => {
-                if (e.target) {
-                    e.preventDefault();
-                }
-        
-                this.modal.style.display = "block";
-                document.body.style.overflow = "hidden";
-            });
+            item.addEventListener('click', () => {this.showModal()});
         });
     }
 
+    hideModal () {
+        this.modal.style.display = "none";
+        document.body.style.overflow = "";
+    }
+
     closeModal () {
-        this.close.addEventListener('click', () => {
-            this.modal.style.display = "none";
-            document.body.style.overflow = "";
-        });
+        this.close.addEventListener('click', () => {this.hideModal()});
 
         this.modal.addEventListener('click', (e) => {
             if (e.target === this.modal) {
-                this.modal.style.display = "none";
-                document.body.style.overflow = "";
+                this.hideModal()
             }
         });  
     }
