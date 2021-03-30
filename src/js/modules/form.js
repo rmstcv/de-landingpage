@@ -70,33 +70,6 @@ export default class Form {
         return await result;
     };
 
-    // sendForm () {
-    //     this.form.addEventListener('submit', (e) => {
-    //         e.preventDefault();
-    //         this.checkName();
-    //         this.checkEmail();
-    //             if (this.checkName() && this.checkEmail()) {
-
-    //                 const formData = new FormData(this.form);
-    //                 this.postData(this.path, formData)
-    //                     .then(result => {
-    //                         if (result.ok === false) {
-    //                             this.popMessage (this.status.fail);
-    //                         } else {
-    //                             this.popMessage (this.status.success);}
-                            
-    //                     })
-    //                     .catch(() => {
-    //                         this.popMessage (this.status.fail);
-    //                     })
-    //                     .finally(() => {
-    //                         this.clearInputs ();
-    //                         this.closeModal();
-    //                     });
-    //             }
-    //     });
-    // };
-
     sendForm () {
         if (this.checkName() && this.checkEmail()) {
 
